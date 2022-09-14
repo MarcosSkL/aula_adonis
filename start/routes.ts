@@ -23,9 +23,3 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
-
-Route.get('/test', async () => {
-  return { hello: 'test' }
-})
-
-Route.post('/lista02/ex01', "Lista01Controller.ex01")
