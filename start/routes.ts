@@ -23,3 +23,9 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+Route.get('/cursos', 'Cursoscontroller.index')
+Route.post('/cursos', 'Cursoscontroller.store')
+
+Route.get('/diciplinas', 'diciplinacontroller.index')
+Route.post('/diciplinas', 'diciplinacontroller.store')
