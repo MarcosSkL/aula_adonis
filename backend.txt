@@ -2,6 +2,11 @@
 2- Instalar o Insomnia
 3- Instalar o Node
 
+metodo get: ver informações / recuperar dados
+metodo post: inserir informações
+metodo put: alterar / atualizar informações
+metodo delete: deletar informações
+metodo patch: atualiza parcialmente informações
 
 
 npm init
@@ -59,6 +64,9 @@ node ace make:migration ''Curso''
 //model + migration
 node ace make:model ''Curso'' -m
 
+//model + migration + controller
+node ace make:model nomedommc -m -c
+
 node ace migration:run
 
 //desfaz a ultima alteração
@@ -73,7 +81,10 @@ node ace migration:reset
 //seeders
 node ace make:seeder curso
 node ace db:seed
-node ace migration:refresh -seed
+node ace migration:refresh --seed
+
+//escolher a ordem das tabelas
+node ace db:seed -i
 
 @column()
 public nome: string
@@ -87,6 +98,23 @@ node ace make -h
 //AFK
 table.integer('curso_id').unsigned().references('id).inTable('cursos').notNullable
 
+//banco de dados
+select *from cursos
+.all()
+
+//async e await andam sempre juntos (pede pro codigo esperar dar o return)
+
+//mostrar todas rotas
+node ace list:routes
+
+//add proejto no repositorio do Github, usando o GitBash
+$ git remote add origin https://github.com/MarcosSkL/Adonis_acad-mico.git
+
+git config --global user.name "Marcos Bezerra"
+git config --global user.email "marcos.marsk@gmail.com"
+
+insert into cursos(nome, duração, modaliadde)
+	    values ('ADS',     5,     "p")
 
 
 
