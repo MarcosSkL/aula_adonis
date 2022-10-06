@@ -24,8 +24,17 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.get('/cursos', 'Cursoscontroller.index')
-Route.post('/cursos', 'Cursoscontroller.store')
 
-Route.get('/diciplinas', 'diciplinacontroller.index')
-Route.post('/diciplinas', 'diciplinacontroller.store')
+Route.resource('/cursos', 'CursosController').apiOnly()
+
+Route.resource('/diciplinas', 'DiciplinasController').apiOnly()
+
+Route.resource('/Chamadas', 'ChamadasController').apiOnly()
+
+Route.resource('/Professor', 'ProfessorsController').apiOnly()
+
+Route.resource('/Salas', 'SalasController').apiOnly()
+
+Route.resource('/TurmaAluno', 'TurmaAlunosController').apiOnly()
+
+Route.resource('/Alunos', 'AlunosController').apiOnly()
