@@ -108,6 +108,9 @@ select *from cursos
 node ace list:routes
 
 //add proejto no repositorio do Github, usando o GitBash
+git add -A
+git commit-m "nome_versao"
+
 $ git remote add origin https://github.com/MarcosSkL/Adonis_acad-mico.git
 
 git config --global user.name "Marcos Bezerra"
@@ -115,6 +118,18 @@ git config --global user.email "marcos.marsk@gmail.com"
 
 insert into cursos(nome, duração, modaliadde)
 	    values ('ADS',     5,     "p")
+
+
+
+// Relacionamentos entre tabelas
+
+@hasMany( ()=> Disciplina )
+  public disciplinas: HasMany<typeof Disciplina>
+
+@belongsTo( ()=> Curso )
+  public curso: BelongsTo<typeof Curso>
+
+
 
 
 
